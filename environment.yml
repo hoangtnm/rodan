@@ -1,0 +1,27 @@
+name: dl
+channels:
+  - pytorch
+  - huggingface
+  - defaults
+  - conda-forge
+dependencies:
+  - pytorch=1.7
+  - torchvision
+  - torchaudio
+  - torchtext
+  - captum
+  - cudatoolkit=11
+  - scikit-learn
+  - spacy
+  - tqdm
+  - boto3
+  - requests
+  - opencv
+  - libopencv
+  - h5py
+  - sacremoses
+  - transformers
+  - tokenizers
+  - pip:
+      - sentencepiece
+      - imutils
