@@ -1,25 +1,30 @@
 import pathlib
+
 from setuptools import find_packages, setup
 
 HERE = pathlib.Path(__file__).parent
 README = (HERE / "README.md").read_text()
 
 REQUIRED_PACKAGES = [
-    "torch>=1.7",
-    "torchvision>=0.8",
+    "torch>=1.8",
+    "torchvision>=0.9",
     "torchaudio",
-    "tensorflow>=2.4",
-    "Matplotlib",
+    "scikit-learn",
+    "scipy",
+    "jupyterlab",
+    "matplotlib",
     "Cython",
 ]
 
 setup(
     name="rodan",
     version="0.0.1",
-    description="Advanced Deep Learning Library",
+    description="An Open Source AI Toolkit for Python",
+    long_description=README,
+    long_description_content_type="text/markdown",
     url="https://github.com/hoangtnm/rodan",
-    author="Hoang N.M. Tran",
-    author_email="",
+    author="Tran N.M. Hoang",
+    author_email="hoangtnm.cse@gmail.com",
     license="Apache License, Version 2.0",
     classifiers=[
         "Intended Audience :: Developers",
@@ -31,8 +36,9 @@ setup(
         "Topic :: Software Development :: Libraries",
         "Topic :: Software Development :: Libraries :: Python Modules",
         "Programming Language :: Python :: 3",
+        "Programming Language :: Python :: 3.8",
     ],
     install_requires=REQUIRED_PACKAGES,
     include_package_data=True,
-    packages=[p for p in find_packages() if p.endswith("rodan")],
+    packages=find_packages("src"),
 )
