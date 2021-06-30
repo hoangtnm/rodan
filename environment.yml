@@ -7,41 +7,45 @@ channels:
   - conda-forge
 dependencies:
   - pytorch
+  - pytorch-lightning
   - torchvision
   - torchaudio
   - torchtext
   - transformers
   - torchmetrics
+  - tensorboard
+  - cudatoolkit
   - black
   - botocore
   - captum
-  - cudatoolkit=11
   - flake8
   - h5py
   - hugginface_hub
-  - matplotlib
-  - ninja
+  - hydra-core
   - jupyterlab
   - kaldi
   - librosa
+  - matplotlib
+  - ninja
+  - onnx
   - pandas
   - pillow
   - pynini
   - pysoundfile
-  - scikit-learn
-  - spacy
-  - sox
-  - tqdm
-  - boto3
-  - requests
-  - sacremoses
-  - transformers
   - tokenizers
+  - tqdm
+  - requests
+  - scikit-learn
+  - scipy
+  - sentencepiece
+  - sox
+  - spacy
   - unidecode
   - pip:
+      - --extra-index-url https://developer.download.nvidia.com/compute/redist
       - deepspeed
       - fairscale
       - imutils
+      - lightning-bolts["extra"]
       - monai
       - opencv-python
-      - lightning-bolts["extra"]
