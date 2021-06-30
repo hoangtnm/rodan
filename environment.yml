@@ -1,4 +1,4 @@
-name: dl
+name: rodan
 channels:
   - pytorch
   - nvidia
