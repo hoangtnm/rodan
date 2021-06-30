@@ -1,27 +1,47 @@
 name: dl
 channels:
   - pytorch
+  - nvidia
   - huggingface
   - defaults
   - conda-forge
 dependencies:
-  - pytorch=1.7
+  - pytorch
   - torchvision
   - torchaudio
   - torchtext
+  - transformers
+  - torchmetrics
+  - black
+  - botocore
   - captum
   - cudatoolkit=11
+  - flake8
+  - h5py
+  - hugginface_hub
+  - matplotlib
+  - ninja
+  - jupyterlab
+  - kaldi
+  - librosa
+  - pandas
+  - pillow
+  - pynini
+  - pysoundfile
   - scikit-learn
   - spacy
+  - sox
   - tqdm
   - boto3
   - requests
-  - opencv
-  - libopencv
-  - h5py
   - sacremoses
   - transformers
   - tokenizers
+  - unidecode
   - pip:
-      - sentencepiece
+      - deepspeed
+      - fairscale
       - imutils
+      - monai
+      - opencv-python
+      - lightning-bolts["extra"]
