@@ -4,6 +4,7 @@ from pathlib import Path
 from typing import Optional, List
 
 import fiftyone as fo
+import numpy as np
 from PIL import Image
 from tqdm import tqdm
 
@@ -48,11 +49,13 @@ def voc2coco(data_dir: str, image_set: str, classes: Optional[List[str]] = None,
             ymin = float(bbox.findtext("ymin")) / height
             xmax = float(bbox.findtext("xmax")) / width
             ymax = float(bbox.findtext("ymax")) / height
-            w = xmax - xmin
-            h = ymax - ymin
+            bbox = np.array([xmin, ymin, xmax, ymax]).clip(min=0, max=1)
+            bbox[2] = bbox[2] - bbox[0]
+            bbox[3] = bbox[3] - bbox[1]
+            bbox = bbox.tolist()
 
             detections.append(fo.Detection(
-                label=name, bounding_box=[xmin, ymin, w, h]
+                label=name, bounding_box=bbox,
             ))
 
         sample["ground_truth"] = fo.Detections(detections=detections)
