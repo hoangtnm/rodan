@@ -2,50 +2,40 @@ name: rodan
 channels:
   - pytorch
   - nvidia
-  - huggingface
-  - defaults
   - conda-forge
+  - defaults
 dependencies:
-  - pytorch
-  - pytorch-lightning
-  - torchvision
-  - torchaudio
-  - torchtext
-  - transformers
-  - torchmetrics
-  - tensorboard
-  - cudatoolkit
-  - black
-  - botocore
-  - captum
-  - flake8
-  - h5py
-  - hugginface_hub
-  - hydra-core
-  - jupyterlab
-  - kaldi
-  - librosa
-  - matplotlib
-  - ninja
-  - onnx
-  - pandas
-  - pillow
-  - pynini
-  - pysoundfile
-  - tokenizers
-  - tqdm
-  - requests
-  - scikit-learn
-  - scipy
-  - sentencepiece
-  - sox
-  - spacy
-  - unidecode
+  - python=3.8
+  - cython
+  - pip
   - pip:
-      - --extra-index-url https://developer.download.nvidia.com/compute/redist
-      - deepspeed
-      - fairscale
-      - imutils
-      - lightning-bolts["extra"]
-      - monai
-      - opencv-python
+    - --extra-index-url https://developer.download.nvidia.com/compute/redist
+    - albumentations
+    - black
+    - captum
+    - fairscale
+    - flake8
+    - h5py
+    - imutils
+    - monai
+    - nemo_toolkit[asr]
+    - onnx
+    - opencv-python
+    - torch>=1.12.1
+    - pytorch-lightning[extra]~=1.6.4
+    - lightning-bolts
+    - torchvision
+    - torchaudio
+    - torchtext
+    - torchmetrics
+    - transformers[sentencepiece]>=4.21.1
+    - tensorboard
+    - jupyterlab
+    - matplotlib
+    - pandas
+    - pillow
+    - tokenizers
+    - tqdm
+    - requests
+    - scikit-learn
+    - scipy
